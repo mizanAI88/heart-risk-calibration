@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "project_id": "heart-risk-calibration",
+  "package_version": "0.1.0",
+  "synthetic": true,
+  "label": "synthetic fixture run on authored demonstration data; not a benchmark result",
+  "source_id": "synthetic-fixture-v1",
+  "mode": "demo",
+  "seed": 42,
+  "protocol": {
+    "protocol": "nested_cv",
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "seed": 42,
+    "inner_scoring": "neg_log_loss",
+    "threshold_rule": "youden",
+    "threshold_grid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "n_bins": 10,
+    "bootstrap_resamples": 200,
+    "models": [
+      "logistic_regression",
+      "hist_gradient_boosting",
+      "mlp"
+    ]
+  },
+  "n": 300,
+  "n_positive": 156,
+  "folds": [
+    {
+      "fold": 1,
+      "n_test": 60
+    },
+    {
+      "fold": 2,
+      "n_test": 60
+    },
+    {
+      "fold": 3,
+      "n_test": 60
+    },
+    {
+      "fold": 4,
+      "n_test": 60
+    },
+    {
+      "fold": 5,
+      "n_test": 60
+    }
+  ],
+  "models": [
+    {
+      "name": "logistic_regression",
+      "n": 300,
+      "auroc": 0.6822026353276354,
+      "auprc": 0.7306286312234236,
+      "brier": 0.22334159405511977,
+      "ece": 0.050375386866898186,
+      "ci": {
+        "auroc": [
+          0.6269210496814804,
+          0.7372851851851853
+        ],
+        "auprc": [
+          0.662259784836175,
+          0.7922932525146481
+        ],
+        "brier": [
+          0.20725613029792603,
+          0.2398460709752591
+        ],
+        "ece": [
+          0.038297969920667856,
+          0.11479509195006364
+        ]
+      },
+      "reliability_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 1,
+          "mean_predicted": 0.09960896853196645,
+          "fraction_positive": 0.0
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 6,
+          "mean_predicted": 0.15010218260118913,
+          "fraction_positive": 0.16666666666666666
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 30,
+          "mean_predicted": 0.26256282551349946,
+          "fraction_positive": 0.3333333333333333
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 55,
+          "mean_predicted": 0.3548358165112454,
+          "fraction_positive": 0.38181818181818183
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 50,
+          "mean_predicted": 0.45375430011665735,
+          "fraction_positive": 0.48
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 47,
+          "mean_predicted": 0.5469171648252292,
+          "fraction_positive": 0.48936170212765956
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 50,
+          "mean_predicted": 0.6423613104855943,
+          "fraction_positive": 0.56
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 39,
+          "mean_predicted": 0.7441657205280449,
+          "fraction_positive": 0.717948717948718
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 18,
+          "mean_predicted": 0.8430917437442098,
+          "fraction_positive": 0.9444444444444444
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 4,
+          "mean_predicted": 0.918948529440621,
+          "fraction_positive": 1.0
+        }
+      ]
+    },
+    {
+      "name": "hist_gradient_boosting",
+      "n": 300,
+      "auroc": 0.7061520655270654,
+      "auprc": 0.6769811187327381,
+      "brier": 0.2245095866370599,
+      "ece": 0.09135355897303846,
+      "ci": {
+        "auroc": [
+          0.6424099844319742,
+          0.7670650150886423
+        ],
+        "auprc": [
+          0.5950867628595466,
+          0.7709393791930262
+        ],
+        "brier": [
+          0.19716894791476205,
+          0.2529264001660393
+        ],
+        "ece": [
+          0.07349659441809614,
+          0.1533054179055412
+        ]
+      },
+      "reliability_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 11,
+          "mean_predicted": 0.07543584938894311,
+          "fraction_positive": 0.09090909090909091
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 29,
+          "mean_predicted": 0.1436587770994298,
+          "fraction_positive": 0.3103448275862069
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 28,
+          "mean_predicted": 0.25131608372366515,
+          "fraction_positive": 0.25
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 30,
+          "mean_predicted": 0.34361344514291886,
+          "fraction_positive": 0.4666666666666667
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 44,
+          "mean_predicted": 0.4496162875073089,
+          "fraction_positive": 0.5
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 27,
+          "mean_predicted": 0.5510658991266886,
+          "fraction_positive": 0.4074074074074074
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 27,
+          "mean_predicted": 0.6555219879408221,
+          "fraction_positive": 0.5555555555555556
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 51,
+          "mean_predicted": 0.7509214380051193,
+          "fraction_positive": 0.7647058823529411
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 28,
+          "mean_predicted": 0.8502883187319246,
+          "fraction_positive": 0.75
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 25,
+          "mean_predicted": 0.934707347774573,
+          "fraction_positive": 0.68
+        }
+      ]
+    },
+    {
+      "name": "mlp",
+      "n": 300,
+      "auroc": 0.6509971509971508,
+      "auprc": 0.6826762344948943,
+      "brier": 0.2557755074837386,
+      "ece": 0.14257340404831265,
+      "ci": {
+        "auroc": [
+          0.5967354155494753,
+          0.7149913671031236
+        ],
+        "auprc": [
+          0.6142269808318427,
+          0.7660906241258179
+        ],
+        "brier": [
+          0.22409709620175697,
+          0.284576547417891
+        ],
+        "ece": [
+          0.10045687504616742,
+          0.20396420922108854
+        ]
+      },
+      "reliability_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 22,
+          "mean_predicted": 0.06420034568456721,
+          "fraction_positive": 0.36363636363636365
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 33,
+          "mean_predicted": 0.14753132730936608,
+          "fraction_positive": 0.30303030303030304
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 28,
+          "mean_predicted": 0.2542445516665248,
+          "fraction_positive": 0.39285714285714285
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 41,
+          "mean_predicted": 0.34693326298681976,
+          "fraction_positive": 0.5121951219512195
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 23,
+          "mean_predicted": 0.4450354749183408,
+          "fraction_positive": 0.43478260869565216
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 35,
+          "mean_predicted": 0.5499570091062789,
+          "fraction_positive": 0.5714285714285714
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 32,
+          "mean_predicted": 0.6532281206051178,
+          "fraction_positive": 0.53125
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 28,
+          "mean_predicted": 0.7538012861277827,
+          "fraction_positive": 0.5714285714285714
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 21,
+          "mean_predicted": 0.8647327974849465,
+          "fraction_positive": 0.8095238095238095
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 37,
+          "mean_predicted": 0.9524223953340006,
+          "fraction_positive": 0.7027027027027027
+        }
+      ]
+    }
+  ]
+}

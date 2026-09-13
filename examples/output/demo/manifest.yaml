@@ -1,0 +1,58 @@
+schema_version: 1
+project_id: heart-risk-calibration
+run_id: 20260913T014643Z-heart-risk-calibration
+status: completed
+mode: demo
+git_commit: null
+data:
+  source_id: synthetic-fixture-v1
+  version: v1
+  split_manifest_hash: a6e74ef5d2ce0dbbc06c5ab81104e30f6419e3f664e70978036a5cb668427fac
+  sample_counts:
+    train: 240
+    val: 80
+    test: 60
+configuration_hash: d9547cde17fc392837dc69c0bb2b4783fa4733d2c9e9c4801b37af4bfc3b26bc
+seed: 42
+environment:
+  lockfile_hash: null
+  device: cpu
+checkpoint_hash: null
+metrics_file: metrics.json
+predictions_file: predictions.csv
+started_at: '2026-09-13T01:46:43+00:00'
+finished_at: '2026-09-13T01:46:57+00:00'
+cv:
+  protocol: nested_cv
+  outer_folds: 5
+  inner_folds: 3
+  unit: row (one row is one patient)
+  per_fold:
+  - fold: 1
+    n_train: 240
+    n_test: 60
+    n_test_positive: 32
+  - fold: 2
+    n_train: 240
+    n_test: 60
+    n_test_positive: 31
+  - fold: 3
+    n_train: 240
+    n_test: 60
+    n_test_positive: 31
+  - fold: 4
+    n_train: 240
+    n_test: 60
+    n_test_positive: 31
+  - fold: 5
+    n_train: 240
+    n_test: 60
+    n_test_positive: 31
+  sample_counts_note: train/val/test are the fold 1 sizes; see per_fold
+load_report:
+  path: synthetic_heart.csv
+  source_id: synthetic-fixture-v1
+  rows_read: 300
+  rows_documented: 300
+  row_count_matches_documented: true
+  missing_cells: 6

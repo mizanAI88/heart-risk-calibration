@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+type: software
+title: heart-risk-calibration
+authors:
+  - family-names: Rahman
+    given-names: MD Mizanur
+version: 0.1.0
+date-released: "2026-09-13"
+license: MIT
+repository-code: https://github.com/mizanAI88/heart-risk-calibration
+references:
+  - type: article
+    title: "Hybrid Deep Learning Framework for Enhanced Heart Disease Prediction: Integrating XGBoost and Capsule Networks with CNN-Transformer Architectures"
+    doi: 10.32996/jcsts.2021.3.2.9
+    journal: "Journal of Computer Science and Technology Studies"
+    year: 2021

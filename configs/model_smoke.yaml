@@ -1,0 +1,27 @@
+# Single-point grids for the offline smoke path (< 20 s). Same pipelines and
+# the same nested protocol as model.yaml; the inner search has one candidate,
+# so selection is trivial but the inner validation predictions still exist and
+# still choose the threshold. Never used for reported numbers.
+models:
+  logistic_regression:
+    fixed:
+      solver: lbfgs
+      max_iter: 1000
+    grid:
+      C: [1.0]
+  hist_gradient_boosting:
+    fixed:
+      max_iter: 30
+      max_bins: 32
+      max_leaf_nodes: 15
+      min_samples_leaf: 10
+      early_stopping: false
+    grid:
+      learning_rate: [0.1]
+  mlp:
+    fixed:
+      hidden_layer_sizes: [16]
+      solver: lbfgs
+      max_iter: 200
+    grid:
+      alpha: [1.0]

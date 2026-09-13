@@ -1,0 +1,14 @@
+# Reduced settings for the offline smoke path (< 20 s). Same protocol shape
+# as eval.yaml; fewer bootstrap resamples. Never used for reported numbers.
+protocol: nested_cv
+outer_folds: 5
+inner_folds: 3
+seed: 42
+inner_scoring: neg_log_loss
+threshold_rule: youden
+threshold_grid_start: 0.05
+threshold_grid_stop: 0.95
+threshold_grid_step: 0.05
+n_bins: 10
+bootstrap_resamples: 25
+models: [logistic_regression, hist_gradient_boosting, mlp]

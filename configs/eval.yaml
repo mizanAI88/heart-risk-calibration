@@ -1,0 +1,17 @@
+# Nested cross-validation protocol (docs/evaluation.md).
+protocol: nested_cv
+outer_folds: 5
+inner_folds: 3
+seed: 42
+# Inner selection criterion for GridSearchCV (sklearn scorer name).
+inner_scoring: neg_log_loss
+# Decision threshold rule applied to inner out-of-fold validation predictions.
+threshold_rule: youden
+threshold_grid_start: 0.05
+threshold_grid_stop: 0.95
+threshold_grid_step: 0.05
+# Reliability diagram / ECE bins (equal width on [0, 1]).
+n_bins: 10
+# Bootstrap over pooled outer-test rows (rows are patients).
+bootstrap_resamples: 200
+models: [logistic_regression, hist_gradient_boosting, mlp]

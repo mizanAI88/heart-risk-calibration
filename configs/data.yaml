@@ -1,0 +1,28 @@
+# Data source description. No dataset is shipped; see docs/data.md.
+source_id: uci-heart-disease-cleveland
+file_name: processed.cleveland.data
+dataset_url: https://archive.ics.uci.edu/dataset/45/heart+disease
+licence: CC BY 4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+download_url: https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data
+# Row count documented by the source; the adapter reports the count it actually read.
+expected_rows: 303
+missing_marker: "?"
+# The 13 attribute columns of the processed Cleveland file, in file order.
+feature_columns:
+  - age
+  - sex
+  - cp
+  - trestbps
+  - chol
+  - fbs
+  - restecg
+  - thalach
+  - exang
+  - oldpeak
+  - slope
+  - ca
+  - thal
+target_column: num
+# Target mapping: num in {0,1,2,3,4}; label = 1 when num > 0, else 0.
+positive_rule: num_greater_than_zero
