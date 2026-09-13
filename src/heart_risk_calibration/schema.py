@@ -61,7 +61,8 @@ def replace_missing_marker(frame: pd.DataFrame, marker: str) -> pd.DataFrame:
     out = frame.copy()
     for col in out.columns:
         series = out[col]
-        if series.dtype == object:
+        # pandas 3 reads text as the `str` dtype, not `object`; test for non-numeric instead
+        if not pd.api.types.is_numeric_dtype(series):
             stripped = series.astype(str).str.strip()
             out[col] = series.where(stripped != marker, other=np.nan)
     return out
